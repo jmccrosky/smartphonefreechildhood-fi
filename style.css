@@ -102,6 +102,19 @@ nav {
     color: var(--primary-color);
 }
 
+.lang-switch {
+    border: 1px solid var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+.lang-switch:hover {
+    background: var(--primary-color);
+    color: white !important;
+}
+
 /* Layout */
 section {
     padding: 5rem 2rem;
