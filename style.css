@@ -188,6 +188,9 @@ section {
     border-radius: 16px;
     box-shadow: var(--card-shadow);
     transition: transform 0.3s ease;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .card:hover {
