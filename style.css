@@ -379,36 +379,75 @@ footer {
 }
 
 /* Hamburger Menu */
+/* Hamburger Menu */
 .hamburger {
     display: none;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0;
-    z-index: 1001;
+    padding: 10px;
+    /* Increase hit area */
+    margin: -10px;
+    /* Compensate for padding */
+    z-index: 2000;
+    /* Ensure it's on top */
     -webkit-appearance: none;
     appearance: none;
+    width: 50px;
+    /* Larger touch target */
+    height: 44px;
+    /* Larger touch target */
+    position: relative;
+    touch-action: manipulation;
+    /* Improve touch handling */
+    -webkit-tap-highlight-color: transparent;
 }
 
-.hamburger svg {
+.hamburger span {
     display: block;
-}
-
-.hamburger rect {
+    width: 30px;
+    /* Fixed width for the lines */
+    height: 3px;
+    background-color: var(--primary-color);
     transition: all 0.3s ease;
-    transform-origin: center;
+    border-radius: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center the lines */
+    pointer-events: none;
+    /* Let clicks pass through to button */
 }
 
-.hamburger.active .line-top {
-    transform: translateY(9px) rotate(45deg);
+.hamburger span:nth-child(1) {
+    top: 12px;
+    /* Position relative to new height */
 }
 
-.hamburger.active .line-middle {
+.hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hamburger span:nth-child(3) {
+    bottom: 12px;
+    /* Position relative to new height */
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translate(-50%, 0) rotate(45deg);
+    top: 50%;
+    margin-top: -1.5px;
+}
+
+.hamburger.active span:nth-child(2) {
     opacity: 0;
 }
 
-.hamburger.active .line-bottom {
-    transform: translateY(-9px) rotate(-45deg);
+.hamburger.active span:nth-child(3) {
+    transform: translate(-50%, 0) rotate(-45deg);
+    bottom: 50%;
+    margin-bottom: -1.5px;
 }
 
 /* Responsive */
