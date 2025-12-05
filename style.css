@@ -419,10 +419,17 @@ footer {
         /* Reduce padding on mobile */
     }
 
+    .logo {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
+
     .logo-img {
-        height: 32px;
-        max-height: 32px;
-        max-width: 100px;
+        height: 28px;
+        max-height: 28px;
+        max-width: 70px;
     }
 
     /* Hamburger container */
