@@ -35,21 +35,40 @@
     </nav>
 
     <script>
+        console.log('Script loaded');
+
         document.addEventListener('DOMContentLoaded', function () {
+            console.log('DOMContentLoaded fired');
+
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
 
+            console.log('Hamburger element:', hamburger);
+            console.log('NavLinks element:', navLinks);
+            console.log('Hamburger computed style:', hamburger ? window.getComputedStyle(hamburger) : 'null');
+
             if (hamburger && navLinks) {
+                console.log('Adding click listener to hamburger');
+
+                // Try both click and touchstart for better mobile support
                 hamburger.addEventListener('click', function (e) {
+                    console.log('Hamburger clicked!');
                     e.preventDefault();
                     e.stopPropagation();
                     this.classList.toggle('active');
                     navLinks.classList.toggle('active');
+                    console.log('Hamburger active:', this.classList.contains('active'));
+                    console.log('NavLinks active:', navLinks.classList.contains('active'));
                 });
+
+                hamburger.addEventListener('touchstart', function (e) {
+                    console.log('Hamburger touchstart!');
+                }, { passive: true });
 
                 // Close menu when clicking a link
                 document.querySelectorAll('.nav-links a').forEach(link => {
                     link.addEventListener('click', () => {
+                        console.log('Nav link clicked, closing menu');
                         hamburger.classList.remove('active');
                         navLinks.classList.remove('active');
                     });
@@ -58,10 +77,13 @@
                 // Close menu when clicking outside
                 document.addEventListener('click', function (e) {
                     if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+                        console.log('Clicked outside, closing menu');
                         hamburger.classList.remove('active');
                         navLinks.classList.remove('active');
                     }
                 });
+            } else {
+                console.error('Hamburger or navLinks not found!');
             }
         });
     </script>
