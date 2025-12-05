@@ -90,8 +90,11 @@ nav {
 }
 
 .logo-img {
+    display: block;
     height: 40px;
+    max-height: 40px;
     width: auto;
+    max-width: 120px;
     object-fit: contain;
 }
 
@@ -414,6 +417,12 @@ footer {
     nav {
         padding: 1rem;
         /* Reduce padding on mobile */
+    }
+
+    .logo-img {
+        height: 32px;
+        max-height: 32px;
+        max-width: 100px;
     }
 
     /* Hamburger container */
