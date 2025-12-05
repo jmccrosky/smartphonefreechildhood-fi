@@ -382,8 +382,6 @@ footer {
 /* Hamburger Menu */
 .hamburger {
     display: none;
-    background: transparent;
-    border: none;
     cursor: pointer;
     padding: 10px;
     /* Increase hit area */
@@ -391,16 +389,21 @@ footer {
     /* Compensate for padding */
     z-index: 2000;
     /* Ensure it's on top */
-    -webkit-appearance: none;
-    appearance: none;
     width: 50px;
     /* Larger touch target */
     height: 44px;
     /* Larger touch target */
+    min-width: 50px;
+    /* Prevent squashing */
+    flex-shrink: 0;
+    /* Prevent squashing */
     position: relative;
     touch-action: manipulation;
     /* Improve touch handling */
     -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    /* Prevent text selection */
+    -webkit-user-select: none;
 }
 
 .hamburger span {
