@@ -382,71 +382,32 @@ footer {
 /* Hamburger Menu */
 .hamburger {
     display: none;
+    flex-direction: column;
+    justify-content: center;
     cursor: pointer;
     padding: 10px;
-    /* Increase hit area */
-    margin: -10px;
-    /* Compensate for padding */
     z-index: 2000;
-    /* Ensure it's on top */
-    width: 50px;
-    /* Larger touch target */
-    height: 44px;
-    /* Larger touch target */
-    min-width: 50px;
-    /* Prevent squashing */
-    flex-shrink: 0;
-    /* Prevent squashing */
-    position: relative;
+    min-width: 44px;
+    min-height: 44px;
     touch-action: manipulation;
-    /* Improve touch handling */
     -webkit-tap-highlight-color: transparent;
     user-select: none;
-    /* Prevent text selection */
     -webkit-user-select: none;
 }
 
 .hamburger span {
-    display: block;
-    width: 30px;
-    /* Fixed width for the lines */
-    height: 3px;
-    background-color: #2D5A4C;
-    /* Use explicit color instead of var() for better Safari compatibility */
-    transition: all 0.3s ease;
-    border-radius: 2px;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    /* Center the lines */
-    pointer-events: none;
-    /* Let clicks pass through to button */
-    will-change: transform;
-    /* Hint to browser for better rendering */
-}
-
-.hamburger span:nth-child(1) {
-    top: 12px;
-    /* Position relative to new height */
-}
-
-.hamburger span:nth-child(2) {
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-.hamburger span:nth-child(3) {
-    bottom: 12px;
-    /* Position relative to new height */
+    display: block !important;
+    width: 30px !important;
+    height: 3px !important;
+    background: #2D5A4C !important;
+    margin: 6px 0 !important;
+    transition: 0.3s !important;
+    border-radius: 2px !important;
 }
 
 .hamburger.active span:nth-child(1) {
-    -webkit-transform: translate(-50%, 0) rotate(45deg);
-    transform: translate(-50%, 0) rotate(45deg);
-    top: 50%;
-    margin-top: -1.5px;
+    -webkit-transform: rotate(45deg) translate(7px, 7px);
+    transform: rotate(45deg) translate(7px, 7px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -454,10 +415,8 @@ footer {
 }
 
 .hamburger.active span:nth-child(3) {
-    -webkit-transform: translate(-50%, 0) rotate(-45deg);
-    transform: translate(-50%, 0) rotate(-45deg);
-    bottom: 50%;
-    margin-bottom: -1.5px;
+    -webkit-transform: rotate(-45deg) translate(7px, -7px);
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* Responsive */
