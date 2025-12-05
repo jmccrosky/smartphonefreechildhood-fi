@@ -411,15 +411,19 @@ footer {
     width: 30px;
     /* Fixed width for the lines */
     height: 3px;
-    background-color: var(--primary-color);
+    background-color: #2D5A4C;
+    /* Use explicit color instead of var() for better Safari compatibility */
     transition: all 0.3s ease;
     border-radius: 2px;
     position: absolute;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     /* Center the lines */
     pointer-events: none;
     /* Let clicks pass through to button */
+    will-change: transform;
+    /* Hint to browser for better rendering */
 }
 
 .hamburger span:nth-child(1) {
@@ -429,6 +433,7 @@ footer {
 
 .hamburger span:nth-child(2) {
     top: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -438,6 +443,7 @@ footer {
 }
 
 .hamburger.active span:nth-child(1) {
+    -webkit-transform: translate(-50%, 0) rotate(45deg);
     transform: translate(-50%, 0) rotate(45deg);
     top: 50%;
     margin-top: -1.5px;
@@ -448,6 +454,7 @@ footer {
 }
 
 .hamburger.active span:nth-child(3) {
+    -webkit-transform: translate(-50%, 0) rotate(-45deg);
     transform: translate(-50%, 0) rotate(-45deg);
     bottom: 50%;
     margin-bottom: -1.5px;
