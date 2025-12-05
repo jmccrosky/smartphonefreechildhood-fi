@@ -47,6 +47,26 @@
             console.log('NavLinks element:', navLinks);
             console.log('Hamburger computed style:', hamburger ? window.getComputedStyle(hamburger) : 'null');
 
+            // Check the spans specifically
+            const spans = hamburger ? hamburger.querySelectorAll('span') : [];
+            console.log('Number of spans:', spans.length);
+            spans.forEach((span, i) => {
+                const style = window.getComputedStyle(span);
+                console.log(`Span ${i + 1}:`, {
+                    display: style.display,
+                    width: style.width,
+                    height: style.height,
+                    backgroundColor: style.backgroundColor,
+                    position: style.position,
+                    top: style.top,
+                    bottom: style.bottom,
+                    left: style.left,
+                    transform: style.transform,
+                    visibility: style.visibility,
+                    opacity: style.opacity
+                });
+            });
+
             if (hamburger && navLinks) {
                 console.log('Adding click listener to hamburger');
 
