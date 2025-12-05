@@ -420,6 +420,16 @@ footer {
         font-size: 2rem;
     }
 
+    .nav-container {
+        width: 100%;
+        /* Ensure full width for flex spacing */
+    }
+
+    nav {
+        padding: 1rem;
+        /* Reduce padding on mobile */
+    }
+
     .hamburger {
         display: block;
     }
