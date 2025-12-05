@@ -403,6 +403,10 @@ footer {
     margin: 6px 0 !important;
     transition: 0.3s !important;
     border-radius: 2px !important;
+    overflow: hidden !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    color: transparent !important;
 }
 
 .hamburger.active span:nth-child(1) {
