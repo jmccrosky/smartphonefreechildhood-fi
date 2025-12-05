@@ -420,16 +420,20 @@ footer {
     }
 
     .logo {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 0.5rem;
-        font-size: 1rem;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        font-size: 1rem !important;
+        white-space: nowrap !important;
     }
 
     .logo-img {
-        height: 28px;
-        max-height: 28px;
-        max-width: 70px;
+        height: 28px !important;
+        max-height: 28px !important;
+        max-width: 70px !important;
+        flex-shrink: 0 !important;
     }
 
     /* Hamburger container */
