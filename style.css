@@ -120,6 +120,9 @@ nav {
     border-radius: 20px;
     font-size: 0.9rem;
     margin-left: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .lang-switch:hover {
